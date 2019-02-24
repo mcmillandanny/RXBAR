@@ -16,6 +16,8 @@ TABLE OF CONTENTS:
 /* 0. Reset ================================= */
 @import 'reset';
 
+$bg-color: #edb1c4;
+
 
 /* 1. Main Layout ================================= */
 
@@ -24,7 +26,7 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: #ccc;
+	background: $bg-color;
 }
 
 
@@ -32,8 +34,66 @@ body {
 
 /* 2. Content ================================= */
 
+header {
+	background: #fff;
+	width: 100%;
+	min-height: 20vh;
+	max-height: 15vh;
+	position: relative;
 
+
+	.hamburger {
+		position: absolute;
+		top: 35.75px;
+		left: 20px;
+		background: purple;
+		border-radius: 10px;
+	}
+
+	.shop-icon {
+		position: absolute;
+		top: 45.75px;
+		left: 90%;
+		
+		border: 1px solid red;
+	}
+
+
+	.header-logo {
+		min-width: 12%;
+		max-width: 16%;
+		position: absolute;
+		top: 45.75%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+	}
+}
 
 .content {
+	background: url('../img/BACKGROUND PATTERN.png');
+	background-size: 100vw;
+
+	.hero-text {
+		font-size: 2em;
+		text-align: center;
+		padding: 50px;
+		font-weight: 1000;
+	}
+
+	.images-hero .showing-class{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+
+	.dates-home, .peanut-home, .equal-home, .pb-bar-img{
+		display: none;
+	}
+ 
 	
+	.shop-now-btn-home {
+		text-decoration: none;
+	}
 }
