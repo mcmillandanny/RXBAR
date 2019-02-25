@@ -95,5 +95,20 @@ header {
 	
 	.shop-now-btn-home {
 		text-decoration: none;
+		padding: 15px;
+		background: white;
+		border: 1.5px solid black;
+		font-size: 20px;
+		text-align: center;
+		color: black;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 35%;
+		margin-top: 40px;
+	}
+
+	.shop-now-btn-home:hover {
+		background: #edb1c4;
 	}
 }
