@@ -1,11 +1,17 @@
 console.log('RXBAR')
 
-let ingredientsImages = document.querySelectorAll('.showing-class');
-let currentImgIndex = 0;
+// let ingredientsImages = document.querySelectorAll('.showing-class');
+// let currentImgIndex = 0;
+// let playTotal = 6;
+// let playCount = 0;
 
 
 // setInterval(() => {
 //     // animateTextInOut()
+//     playCount++;
+//     if (playCount >= playTotal) {
+//         return;
+//     }
 
 //     let hideShowingText = function() {
 //         TweenMax.to( ingredientsImages[currentImgIndex], 0.3, { 
@@ -20,12 +26,13 @@ let currentImgIndex = 0;
 //             display: "none", 
 //             opacity: 0,
 //             x: -30,
-//             y: 0
+//             y: 0,
 //         }, { 
 //             display: "block", 
 //             opacity: 1,
 //             x: 0,
-//             y: 0
+//             y: 0,
+//             delay: 0.3
 //          })
        
 //     }   
