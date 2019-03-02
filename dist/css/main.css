@@ -92,7 +92,7 @@ header .hamburger .menu-lines {
 	max-width: 40px;
 	position: absolute;
 	top: 35px;
-	left: 35px;
+	left: 46px;
 	z-index: 1;
 }
 
@@ -100,7 +100,7 @@ header .hamburger .pink-menu-bg {
 	max-width: 100px;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 12px;
 	margin: 5px;
 }
 
@@ -112,7 +112,7 @@ header .shop-icon {
 }
 
 header .header-logo {
-	max-width: 30%;
+	max-width: 20%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -122,24 +122,31 @@ header .header-logo {
 .content {
 	background: url("../img/BACKGROUND PATTERN.png");
 	background-size: 100vw;
+	min-height: 100vh;
 	position: relative;
 }
 
-.content .hero-text {
+@media (min-width: 768px) {
+	.content .hero-text-container {
+		position: absolute;
+		left: 50%;
+		top: 40%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.content .hero-text-container .hero-text {
 	font-size: 60px;
 	text-align: center;
 	padding: 20px;
 	margin-top: 5px;
 	font-weight: 1000;
-	transition: .3;
+	transition: .3s;
 }
 
 @media (min-width: 768px) {
-	.content .hero-text {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	.content .hero-text-container .hero-text {
+		font-size: 100px;
 	}
 }
 
@@ -154,11 +161,10 @@ header .header-logo {
 	padding: 5px;
 }
 
-.content .eggs-text {
-	position: absolute;
-	top: -3%;
-	left: 0;
-	width: 15%;
+@media (min-width: 768px) {
+	.content .images-hero img {
+		width: 12%;
+	}
 }
 
 .content .images-hero {
@@ -168,16 +174,9 @@ header .header-logo {
 	margin-left: 70px;
 }
 
-@media (min-width: 500px) {
-	.content .images-hero {
-		border: 1px solid red;
-	}
-}
-
 @media (min-width: 768px) {
 	.content .images-hero {
 		border: 1px solid blue;
-		margin-top: 50px;
 		margin-left: 10px;
 	}
 }
@@ -188,17 +187,26 @@ header .header-logo {
 	top: 20%;
 }
 
+@media (min-width: 768px) {
+	.content .images-hero .pb-bar-img {
+		width: 16%;
+		left: 75%;
+		top: 10%;
+	}
+}
+
 .content .images-hero .eggs-text {
 	position: absolute;
-	top: -3%;
+	top: -3.4%;
 	left: 22px;
-	max-width: 15%;
+	max-width: 12%;
 }
 
 @media (min-width: 768px) {
 	.content .images-hero .eggs-text {
 		top: -3.5%;
 		left: 36px;
+		width: 10%;
 	}
 }
 
@@ -206,16 +214,22 @@ header .header-logo {
 	position: absolute;
 	top: 34%;
 	left: 4px;
-	max-width: 15%;
+	max-width: 12%;
 	transform: rotate(-20deg);
 }
 
 .content .images-hero .peanuts-text {
 	position: absolute;
-	top: 60%;
+	top: 62%;
 	left: 20px;
-	max-width: 17%;
+	max-width: 14%;
 	transform: rotate(-40deg);
+}
+
+@media (min-width: 768px) {
+	.content .eggs-home {
+		margin-left: 100px;
+	}
 }
 
 .content .shop-now-btn-home {
@@ -229,13 +243,67 @@ header .header-logo {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 35%;
+	width: 20%;
 	margin-top: 40px;
 	margin-bottom: 20px;
 }
 
+@media (min-width: 768px) {
+	.content .shop-now-btn-home {
+		position: absolute;
+		left: 75%;
+		top: 54%;
+	}
+}
+
 .content .shop-now-btn-home:hover {
 	background: #edb1c4;
+}
+
+.blueberry-page {
+	display: none;
+}
+
+.squares-page {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	display: none;
+}
+
+.squares-page .square1, .squares-page .square2, .squares-page .square3, .squares-page .square4, .squares-page .square5,
+.squares-page .square6, .squares-page .square7, .squares-page .square8, .squares-page .square9, .squares-page .square10,
+.squares-page .square11, .squares-page .square12, .squares-page .square13, .squares-page .square14, .squares-page .square15 {
+	width: 19%;
+	height: 115px;
+	margin: 2px 1px 2px 1px;
+	background: #fff;
+}
+
+@media (min-width: 768px) {
+	.squares-page .square1, .squares-page .square2, .squares-page .square3, .squares-page .square4, .squares-page .square5,
+	.squares-page .square6, .squares-page .square7, .squares-page .square8, .squares-page .square9, .squares-page .square10,
+	.squares-page .square11, .squares-page .square12, .squares-page .square13, .squares-page .square14, .squares-page .square15 {
+		height: 165px;
+	}
+}
+
+.closed-nav {
+	width: 100%;
+	min-height: 100vh;
+	background: pink;
+	position: absolute;
+	top: 0%;
+	z-index: 2;
+}
+
+.closed-nav .header-logo-nav-open {
+	width: 20%;
+}
+
+.open-nav {
+	display: block;
 }
 
 /*# sourceMappingURL=main.css.map */

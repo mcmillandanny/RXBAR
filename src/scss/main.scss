@@ -17,6 +17,7 @@ TABLE OF CONTENTS:
 @import 'reset';
 
 $bg-color: #edb1c4;
+$blue-bg-color: #b9c4d2;
 
 $mobile-wide: 500px;
 $tablet-bp: 768px;
@@ -71,7 +72,7 @@ header {
 			max-width: 40px;
 			position: absolute;
 			top: 35px;
-			left: 35px;
+			left: 46px;
 			z-index: 1;
 
 		}
@@ -80,7 +81,7 @@ header {
 			max-width: 100px;
 			position: absolute;
 			top: 0;
-			left: 0;
+			left: 12px;
 			margin: 5px;
 		}
 	}
@@ -96,7 +97,7 @@ header {
 
 
 	.header-logo {
-		max-width: 30%;
+		max-width: 20%;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -108,24 +109,31 @@ header {
 .content {
 	background: url('../img/BACKGROUND PATTERN.png');
 	background-size: 100vw;
+	min-height: 100vh;
 	position: relative;
 
 
-
-	.hero-text {
-		font-size: 60px;
-		text-align: center;
-		padding: 20px;
-		margin-top: 5px;
-		font-weight: 1000;
-		transition: .3;
-		
+	.hero-text-container {
 		@include tablet {
-			position: absolute;
-			top: 50%;
+			position: absolute; 
 			left: 50%;
+			top: 40%;
 			transform: translate(-50%, -50%);
 		}
+		
+		.hero-text {
+			font-size: 60px;
+			text-align: center;
+			padding: 20px;
+			margin-top: 5px;
+			font-weight: 1000;
+			transition: .3s;
+
+			@include tablet() {
+				font-size: 100px;
+			}
+		}
+	
 	}
 
 	.bottom-hero-text {
@@ -138,14 +146,11 @@ header {
 		position: relative;
 		padding: 5px;
 
-		
-	}
+		@include tablet {
+			width: 12%;
+		}
 
-	.eggs-text {
-		position: absolute;
-		top: -3%;
-		left: 0;
-		width: 15%;
+		
 	}
 
 	.images-hero {
@@ -154,32 +159,39 @@ header {
 		position: relative;
 		margin-left: 70px;
 
-		@include mobile-wide {
-			border: 1px solid red;
-		}
 
 		@include tablet {
 			border: 1px solid blue;
-			margin-top: 50px;
 			margin-left: 10px;
 		}
+
+
+
+		
 
 
 		.pb-bar-img {
 			position: absolute;
 			left: 40%;
 			top: 20%;
+
+			@include tablet {
+				width: 16%;
+				left: 75%;
+				top: 10%;
+			}
 		}
 
 		.eggs-text {
 			position: absolute;
-			top: -3%;
+			top: -3.4%;
 			left: 22px;
-			max-width: 15%;
+			max-width: 12%;
 
 			@include tablet {
 				top: -3.5%;
 				left: 36px;
+				width: 10%;
 			}
 		}
 
@@ -187,19 +199,25 @@ header {
 			position: absolute;
 			top: 34%;
 			left: 4px;
-			max-width: 15%;
+			max-width: 12%;
 			transform: rotate(-20deg);
 		}
 
 		.peanuts-text {
 			position: absolute;
-			top: 60%;
+			top: 62%;
 			left: 20px;
-			max-width: 17%;
+			max-width: 14%;
 			transform: rotate(-40deg);
 		}
 	}
 
+
+	.eggs-home {
+		@include tablet() {
+			margin-left: 100px; 
+		}
+	}
 
 	
 	.shop-now-btn-home {
@@ -213,12 +231,61 @@ header {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		width: 35%;
+		width: 20%;
 		margin-top: 40px;
 		margin-bottom: 20px;
+
+		@include tablet {
+			position: absolute;
+			left: 75%;
+			top: 54%;
+		}
 	}
 
 	.shop-now-btn-home:hover {
 		background: #edb1c4;
 	}
+}
+
+
+.blueberry-page {
+	display: none;
+}
+
+.squares-page {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between; 
+	display: none;
+
+
+	.square1, .square2, .square3, .square4, .square5,
+	.square6, .square7, .square8, .square9, .square10,
+	.square11, .square12, .square13, .square14, .square15 {
+		width: 19%;
+		height: 115px;
+		margin: 2px 1px 2px 1px;
+		background: #fff;	
+
+		@include tablet() {
+			height: 165px;
+		}
+	} 
+}
+
+.closed-nav {
+	width: 100%;
+	min-height: 100vh;
+	background: pink;
+	position: absolute;
+	top: 0%;
+	z-index: 2;
+
+	.header-logo-nav-open {
+		width: 20%;
+	}
+}
+.open-nav {
+	display: block;
 }
