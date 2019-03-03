@@ -105,21 +105,24 @@ header {
 		left: 50%;
 		transform: translate(-50%, -50%);
 
+		@include desktop() {
+			width: 15%;
+		}
 	}
 }
 
 .content {
 	background: url('../img/BACKGROUND PATTERN.png');
 	background-size: 100vw;
-	min-height: 100vh;
 	position: relative;
+	display: none;
 
 
 	.hero-text-container {
 		@include tablet {
 			position: absolute; 
 			left: 50%;
-			top: 40%;
+			top: 50%;
 			transform: translate(-50%, -50%);
 		}
 		
@@ -152,6 +155,8 @@ header {
 			width: 12%;
 		}
 
+	
+
 		
 	}
 
@@ -164,9 +169,10 @@ header {
 
 		@include tablet {
 			border: 1px solid blue;
-			margin-left: 10px;
+			margin: 0px;
 		}
 
+		
 
 
 		
@@ -259,8 +265,9 @@ header {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between; 
-	display: none;
-
+	// display: none;
+	position: relative;
+	transition: .3s;
 
 	.square1, .square2, .square3, .square4, .square5,
 	.square6, .square7, .square8, .square9, .square10,
@@ -274,6 +281,17 @@ header {
 			height: 165px;
 		}
 	} 
+
+	.square1:hover {
+		background: #cb1b41;
+	}
+
+	.square1-text, .square2-text {
+		position: absolute;
+		font-size: 120px;
+		margin: 40px;
+		display: none;
+	}
 }
 
 .closed-nav {

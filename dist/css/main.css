@@ -120,18 +120,24 @@ header .header-logo {
 	transform: translate(-50%, -50%);
 }
 
+@media (min-width: 960px) {
+	header .header-logo {
+		width: 15%;
+	}
+}
+
 .content {
 	background: url("../img/BACKGROUND PATTERN.png");
 	background-size: 100vw;
-	min-height: 100vh;
 	position: relative;
+	display: none;
 }
 
 @media (min-width: 768px) {
 	.content .hero-text-container {
 		position: absolute;
 		left: 50%;
-		top: 40%;
+		top: 50%;
 		transform: translate(-50%, -50%);
 	}
 }
@@ -178,7 +184,7 @@ header .header-logo {
 @media (min-width: 768px) {
 	.content .images-hero {
 		border: 1px solid blue;
-		margin-left: 10px;
+		margin: 0px;
 	}
 }
 
@@ -270,7 +276,8 @@ header .header-logo {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	display: none;
+	position: relative;
+	transition: .3s;
 }
 
 .squares-page .square1, .squares-page .square2, .squares-page .square3, .squares-page .square4, .squares-page .square5,
@@ -288,6 +295,17 @@ header .header-logo {
 	.squares-page .square11, .squares-page .square12, .squares-page .square13, .squares-page .square14, .squares-page .square15 {
 		height: 165px;
 	}
+}
+
+.squares-page .square1:hover {
+	background: #cb1b41;
+}
+
+.squares-page .square1-text, .squares-page .square2-text {
+	position: absolute;
+	font-size: 120px;
+	margin: 40px;
+	display: none;
 }
 
 .closed-nav {
