@@ -18,10 +18,11 @@ TABLE OF CONTENTS:
 
 $bg-color: #edb1c4;
 $blue-bg-color: #b9c4d2;
+$dark-pink: #cb1b41;
 
 $mobile-wide: 500px;
 $tablet-bp: 768px;
-$desktop-bp: 1280px;
+$desktop-bp: 960px;
 
 @mixin mobile-wide {
 	@media (min-width: $mobile-wide) {
@@ -74,6 +75,7 @@ header {
 			top: 35px;
 			left: 46px;
 			z-index: 1;
+			cursor: pointer;
 
 		}
 
@@ -275,17 +277,82 @@ header {
 }
 
 .closed-nav {
-	width: 100%;
-	min-height: 100vh;
-	background: pink;
-	position: absolute;
+	width: 0%;
+	height: 0%;
+	background: $dark-pink;
+	position: fixed;
 	top: 0%;
 	z-index: 2;
+	display: none;
+
+	.close-btn {
+
+		margin-top: 40px;
+		margin-left: 30px;
+		cursor: pointer;
+		.close-btn-1 {
+			width: 45px;
+			height: 3px;
+			border-radius: 10px;
+			background-color: white;
+			margin: 0px 0;
+			transition: 0.4s; 
+			z-index: 2;
+			// margin: 10px;
+			transform: rotate(45deg);
+		}
+
+		.close-btn-2 {
+			width: 45px;
+			height: 3px;
+			border-radius: 10px;
+			background-color: white;
+			margin: 0px 0px;
+			transition: 0.4s ease-in-out;
+			z-index: 2;
+			transform: rotate(-45deg);
+
+
+		}
+	}
+
+	.nav {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+		width: 60%;
+		margin: auto;
+		
+		a {
+			text-decoration: none;
+			color: rgb(189, 125, 136);	
+		}
+
+		h1 {
+			font-size: 40px;
+			margin: 10px 30px;
+		}
+	}
 
 	.header-logo-nav-open {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 		width: 20%;
+		margin-top: -20px;
+		margin-bottom: 70px;
+	}
+
+	.social-media {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+
+		img {
+			padding: 10px;
+		}
 	}
 }
-.open-nav {
-	display: block;
-}
+

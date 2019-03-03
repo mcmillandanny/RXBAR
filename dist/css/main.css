@@ -94,6 +94,7 @@ header .hamburger .menu-lines {
 	top: 35px;
 	left: 46px;
 	z-index: 1;
+	cursor: pointer;
 }
 
 header .hamburger .pink-menu-bg {
@@ -290,20 +291,80 @@ header .header-logo {
 }
 
 .closed-nav {
-	width: 100%;
-	min-height: 100vh;
-	background: pink;
-	position: absolute;
+	width: 0%;
+	height: 0%;
+	background: #cb1b41;
+	position: fixed;
 	top: 0%;
 	z-index: 2;
+	display: none;
+}
+
+.closed-nav .close-btn {
+	margin-top: 40px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.closed-nav .close-btn .close-btn-1 {
+	width: 45px;
+	height: 3px;
+	border-radius: 10px;
+	background-color: white;
+	margin: 0px 0;
+	transition: 0.4s;
+	z-index: 2;
+	transform: rotate(45deg);
+}
+
+.closed-nav .close-btn .close-btn-2 {
+	width: 45px;
+	height: 3px;
+	border-radius: 10px;
+	background-color: white;
+	margin: 0px 0px;
+	transition: 0.4s ease-in-out;
+	z-index: 2;
+	transform: rotate(-45deg);
+}
+
+.closed-nav .nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
+	width: 60%;
+	margin: auto;
+}
+
+.closed-nav .nav a {
+	text-decoration: none;
+	color: #bd7d88;
+}
+
+.closed-nav .nav h1 {
+	font-size: 40px;
+	margin: 10px 30px;
 }
 
 .closed-nav .header-logo-nav-open {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	width: 20%;
+	margin-top: -20px;
+	margin-bottom: 70px;
 }
 
-.open-nav {
-	display: block;
+.closed-nav .social-media {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.closed-nav .social-media img {
+	padding: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
