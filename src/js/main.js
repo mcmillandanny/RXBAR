@@ -7,6 +7,8 @@ let navAnimate = document.querySelector('.nav');
 let shopNowBtn = document.querySelector('.shop-now-btn-home');
 let squaresPage = document.querySelector('.squares-page');
 let squares = document.querySelectorAll(".square");
+let squareTextBoxes = document.querySelectorAll(".square-text");
+let blueBerryPage = document.querySelector('.blueberry-page');
 
 hamburger.addEventListener("click", ()=> {
 
@@ -79,28 +81,36 @@ shopNowBtn.addEventListener("click", () => {
 })
 
 
-squares.forEach(function(square) {
-    square.addEventListener("click", checkIndex)
-});
-
-function checkIndex(event) {
+let checkIndex = function(event) {
    
     let indexNo = Array.from(squares).indexOf(event.target);
+    console.log('indexNo', indexNo)
     // console.log(indexNo,"square"); 
-    if (indexNo === 0) {
-        console.log("THIS IS 0");
-        TweenMax.to(".square1-text", 1, {
-            display: "block"
-        })
-    }
-    if (indexNo === 1) {
-        TweenMax.to(".square2-text", 1, {
-            display: "block"
-        })
 
-        TweenMax.to(".square1-text", .1, {
-            display: "none"
-        })
-        console.log('this is 1!');
-    }
+    // TweenMax.set(squares, {display: 'none'})
+    TweenMax.set(squareTextBoxes, {display: 'none'})
+
+    // TweenMax.to(squares[indexNo], 1, {
+    //     display: "block"
+    // })
+    TweenMax.to(squareTextBoxes[indexNo], 1, {
+        display: "block"
+    })
+
 }
+
+let hideSquareTextBoxes = function() {
+    console.log('hideSquareTextBoxes')
+    TweenMax.set(squareTextBoxes, {display: 'none'})
+}
+
+
+squares.forEach(function(square) {
+    square.addEventListener("mouseenter", checkIndex)
+    square.addEventListener("mouseout", hideSquareTextBoxes)
+});
+
+
+// change page tweens
+
+

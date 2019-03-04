@@ -16,10 +16,25 @@ TABLE OF CONTENTS:
 /* 0. Variables ================================= */
 @import 'reset';
 
+@font-face {
+    font-family: 'greycliff_cfmedium';
+    src: url('greycliffcf-medium-webfont.woff2') format('woff2'),
+    url('greycliffcf-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// colors
 $bg-color: #edb1c4;
 $blue-bg-color: #b9c4d2;
 $dark-pink: #cb1b41;
 
+// other variables
+$header-height: 120px;
+$font-greycliff: 'greycliff_cfmedium';
+
+// breakpoints
 $mobile-wide: 500px;
 $tablet-bp: 768px;
 $desktop-bp: 960px;
@@ -51,8 +66,11 @@ $desktop-bp: 960px;
 
 body {
 	background: $bg-color;
+	font-family: $font-greycliff;
 
 }
+
+
 
 
 
@@ -62,7 +80,7 @@ body {
 header {
 	background: #fff;
 	width: 100%;
-	min-height: 120px;
+	height: $header-height;
 	position: relative;
 
 
@@ -115,7 +133,6 @@ header {
 	background: url('../img/BACKGROUND PATTERN.png');
 	background-size: 100vw;
 	position: relative;
-	display: none;
 
 
 	.hero-text-container {
@@ -154,9 +171,6 @@ header {
 		@include tablet {
 			width: 12%;
 		}
-
-	
-
 		
 	}
 
@@ -165,51 +179,88 @@ header {
 		flex-direction: column;
 		position: relative;
 		margin-left: 70px;
-
+		height: 90vh;
+		height: calc(100vh - #{$header-height});
+		min-height: 450px;
 
 		@include tablet {
-			border: 1px solid blue;
 			margin: 0px;
 		}
 
 		
-
-
-		
-
-
 		.pb-bar-img {
 			position: absolute;
 			left: 40%;
-			top: 20%;
+			top: 20%;;
 
 			@include tablet {
-				width: 16%;
-				left: 75%;
+				width: 15%;
+				left: 76%;
 				top: 10%;
+			}
+		}
+
+
+		.eggs-home {
+
+			@include tablet() {
+				position: absolute;
+				left: 20%;
+				top: 10%;
+				width: 13%;
 			}
 		}
 
 		.eggs-text {
 			position: absolute;
-			top: -3.4%;
-			left: 22px;
+			top: -2%;
+			left: 7%;
 			max-width: 12%;
 
 			@include tablet {
-				top: -3.5%;
-				left: 36px;
-				width: 10%;
+				top: 7%;
+				left: 23%;
+				width: 6%;
+			}
+		}
+
+		.dates-home {
+
+			@include tablet() {
+				position: absolute;
+				left: 13%;
+				top: 63%;
+				width: 13%;
 			}
 		}
 
 		.dates-text {
 			position: absolute;
-			top: 34%;
-			left: 4px;
+			top: 39%;
+			left: 4%;
 			max-width: 12%;
 			transform: rotate(-20deg);
+			
+			@include tablet {
+				top: 77%;
+				left: 22%;
+				width: 6%;
+				transform: rotate(0deg);
+			}
 		}
+
+		.peanut-home {
+
+			@include tablet() {
+				position: absolute;
+				left: 2%;
+				top: 33%;
+				width: 13%;
+				transform: rotate(-80deg);
+			}
+
+
+		} 
 
 		.peanuts-text {
 			position: absolute;
@@ -217,15 +268,18 @@ header {
 			left: 20px;
 			max-width: 14%;
 			transform: rotate(-40deg);
+
+			@include tablet() {
+				top: 31%;
+				left: 4%;
+				width: 8%;
+				transform: rotate(10deg);
+
+			}
 		}
 	}
 
 
-	.eggs-home {
-		@include tablet() {
-			margin-left: 100px; 
-		}
-	}
 
 	
 	.shop-now-btn-home {
@@ -242,11 +296,12 @@ header {
 		width: 20%;
 		margin-top: 40px;
 		margin-bottom: 20px;
+		max-width: 20%;
 
 		@include tablet {
 			position: absolute;
 			left: 75%;
-			top: 54%;
+			top: 67%;
 		}
 	}
 
@@ -265,16 +320,13 @@ header {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between; 
-	// display: none;
+	display: none;
 	position: relative;
 	transition: .3s;
 
-	.square1, .square2, .square3, .square4, .square5,
-	.square6, .square7, .square8, .square9, .square10,
-	.square11, .square12, .square13, .square14, .square15 {
-		width: 19%;
+	.square {
+		width: 20%;
 		height: 115px;
-		margin: 2px 1px 2px 1px;
 		background: #fff;	
 
 		@include tablet() {
@@ -282,15 +334,62 @@ header {
 		}
 	} 
 
-	.square1:hover {
-		background: #cb1b41;
+	.square1 {
+		background: #7c3b19;
+	}
+	.square2 {
+		background: #232726;
+	}
+	.square3 {
+		background: #1c3e63;
+	}
+	.square4 {
+		background: #ebe4da;
+	}
+	.square5 {
+		background: #f1943d;
+	}
+	.square6 {
+		background: #f4f5ef;
+	}
+	.square7 {
+		background: #e84294;
+	}
+	.square8 {
+		background: #5f3120;
+	}
+	.square9 {
+		background: #a75e26;
+	}
+	.square10 {
+		background: #8f3b39;
+	}
+	.square11 {
+		background: #c23055;
+	}
+	.square12 {
+		background: #b88b6a;
+	}
+	.square13 {
+		background: #f5a741;
+	}
+	.square14 {
+		background: #a2d9b2;
+	}
+	.square15 {
+		background: #953f29;
 	}
 
-	.square1-text, .square2-text {
+	.square-text {
 		position: absolute;
-		font-size: 120px;
+		font-size: 40px;
 		margin: 40px;
 		display: none;
+		pointer-events: none;
+
+		@include tablet() {
+			font-size: 120px;
+		}
 	}
 }
 

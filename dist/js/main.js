@@ -9,6 +9,8 @@ var navAnimate = document.querySelector('.nav');
 var shopNowBtn = document.querySelector('.shop-now-btn-home');
 var squaresPage = document.querySelector('.squares-page');
 var squares = document.querySelectorAll(".square");
+var squareTextBoxes = document.querySelectorAll(".square-text");
+var blueBerryPage = document.querySelector('.blueberry-page');
 
 hamburger.addEventListener("click", function () {
 
@@ -74,29 +76,32 @@ shopNowBtn.addEventListener("click", function () {
     });
 });
 
-squares.forEach(function (square) {
-    square.addEventListener("click", checkIndex);
-});
-
-function checkIndex(event) {
+var checkIndex = function checkIndex(event) {
 
     var indexNo = Array.from(squares).indexOf(event.target);
+    console.log('indexNo', indexNo);
     // console.log(indexNo,"square"); 
-    if (indexNo === 0) {
-        console.log("THIS IS 0");
-        TweenMax.to(".square1-text", 1, {
-            display: "block"
-        });
-    }
-    if (indexNo === 1) {
-        TweenMax.to(".square2-text", 1, {
-            display: "block"
-        });
 
-        TweenMax.to(".square1-text", .1, {
-            display: "none"
-        });
-        console.log('this is 1!');
-    }
-}
+    // TweenMax.set(squares, {display: 'none'})
+    TweenMax.set(squareTextBoxes, { display: 'none' });
+
+    // TweenMax.to(squares[indexNo], 1, {
+    //     display: "block"
+    // })
+    TweenMax.to(squareTextBoxes[indexNo], 1, {
+        display: "block"
+    });
+};
+
+var hideSquareTextBoxes = function hideSquareTextBoxes() {
+    console.log('hideSquareTextBoxes');
+    TweenMax.set(squareTextBoxes, { display: 'none' });
+};
+
+squares.forEach(function (square) {
+    square.addEventListener("mouseenter", checkIndex);
+    square.addEventListener("mouseout", hideSquareTextBoxes);
+});
+
+// change page tweens
 //# sourceMappingURL=main.js.map
