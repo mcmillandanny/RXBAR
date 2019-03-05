@@ -37,7 +37,7 @@ $font-greycliff: 'greycliff_cfmedium';
 // breakpoints
 $mobile-wide: 500px;
 $tablet-bp: 768px;
-$desktop-bp: 960px;
+$desktop-bp: 1024px;
 
 @mixin mobile-wide {
 	@media (min-width: $mobile-wide) {
@@ -65,8 +65,8 @@ $desktop-bp: 960px;
 }
 
 body {
-	background: $bg-color;
 	font-family: $font-greycliff;
+	background: $bg-color;
 
 }
 
@@ -104,6 +104,14 @@ header {
 			left: 12px;
 			margin: 5px;
 		}
+
+		.blue-menu-bg {
+			max-width: 100px;
+			position: absolute;
+			top: 0;
+			left: 12px;
+			margin: 5px;
+		}	
 	}
 
 	
@@ -133,186 +141,187 @@ header {
 	background: url('../img/BACKGROUND PATTERN.png');
 	background-size: 100vw;
 	position: relative;
+	display: flex;
+	flex-direction: column;
 
-
-	.hero-text-container {
-		@include tablet {
-			position: absolute; 
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-		
-		.hero-text {
-			font-size: 60px;
-			text-align: center;
-			padding: 20px;
-			margin-top: 5px;
-			font-weight: 1000;
-			transition: .3s;
-
-			@include tablet() {
-				font-size: 100px;
-			}
-		}
-	
+	@include tablet() {
+		flex-direction: row;
 	}
 
 	.bottom-hero-text {
 		margin-bottom: 15px;
 	}
 
-	.images-hero img {
-		width: 30%;
-		margin: 20px 20px;
+	.col-1 {
+		order: 2;
 		position: relative;
-		padding: 5px;
-
-		@include tablet {
-			width: 12%;
-		}
-		
-	}
-
-	.images-hero {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		margin-left: 70px;
-		height: 90vh;
-		height: calc(100vh - #{$header-height});
+		height: calc(60vh - #{$header-height});
 		min-height: 450px;
+		width: 100%;
 
-		@include tablet {
-			margin: 0px;
+		@include tablet() {
+			width: 33%;
+			order: 1;
 		}
 
-		
-		.pb-bar-img {
+		.eggs-home, .eggs-home-blue {
 			position: absolute;
-			left: 40%;
-			top: 20%;;
-
-			@include tablet {
-				width: 15%;
-				left: 76%;
-				top: 10%;
-			}
-		}
-
-
-		.eggs-home {
-
+			top: 6%;
+			left: 53%;
+			width: 30%;
 			@include tablet() {
-				position: absolute;
-				left: 20%;
+				left: 60%;
 				top: 10%;
-				width: 13%;
+				width: 40%;
 			}
 		}
 
 		.eggs-text {
 			position: absolute;
-			top: -2%;
-			left: 7%;
-			max-width: 12%;
+			top: 0%;
+			left: 60%;
+			width: 12%;
 
 			@include tablet {
-				top: 7%;
-				left: 23%;
-				width: 6%;
+				top: 8%;
+				left: 70%;
+				width: 15%;
 			}
 		}
 
-		.dates-home {
-
+		.dates-home, .dates-home-blue {
+			position: absolute;
+			top: 32%;
+			left: 9%;
+			width: 30%;
 			@include tablet() {
-				position: absolute;
-				left: 13%;
-				top: 63%;
-				width: 13%;
+				left: 58%;
+				top: 74%;
+				width: 40%;
 			}
 		}
+
 
 		.dates-text {
 			position: absolute;
-			top: 39%;
-			left: 4%;
-			max-width: 12%;
-			transform: rotate(-20deg);
+			top: 28%;
+			left: 15%;
+			width: 12%;
 			
 			@include tablet {
-				top: 77%;
-				left: 22%;
-				width: 6%;
-				transform: rotate(0deg);
+				top: 70%;
+				left: 63%;
+				width: 17%;
+
 			}
 		}
 
-		.peanut-home {
-
+		.peanut-home, .cashews-home {
+			position: absolute;
+			top: 55%;
+			left: 56%;
+			width: 30%;
 			@include tablet() {
-				position: absolute;
-				left: 2%;
-				top: 33%;
-				width: 13%;
+				left: 12%;
+				top: 43%;
+				width: 40%;
 				transform: rotate(-80deg);
+				
 			}
 
 
 		} 
 
-		.peanuts-text {
+		.peanuts-text, .cashews-text {
 			position: absolute;
-			top: 62%;
-			left: 20px;
-			max-width: 14%;
+			top: 57%;
+			left: 60%;
+			width: 15%;
 			transform: rotate(-40deg);
 
 			@include tablet() {
-				top: 31%;
-				left: 4%;
-				width: 8%;
+				top: 40%;
+				left: 20%;
 				transform: rotate(10deg);
+				width: 20%;
 
 			}
 		}
 	}
 
+	.col-2 {
+		width: 100%;
+		position: relative;
+		order: 1;
 
+		@include tablet() {
+			width: 34%;
+		}
+		
+		.hero-text {
+			font-size: 60px;
+			text-align: center;
+			padding: 20px;
+			font-weight: 1000;
 
-	
-	.shop-now-btn-home {
-		text-decoration: none;
-		padding: 15px;
-		background: white;
-		border: 1.5px solid black;
-		font-size: 20px;
-		text-align: center;
-		color: black;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 20%;
-		margin-top: 40px;
-		margin-bottom: 20px;
-		max-width: 20%;
-
-		@include tablet {
-			position: absolute;
-			left: 75%;
-			top: 67%;
+			@include tablet() {
+				font-size: 80px;
+				margin-top: 30px;
+			}
 		}
 	}
 
-	.shop-now-btn-home:hover {
-		background: #edb1c4;
+	.col-3 {
+		width: 100%;
+		position: relative;
+		order: 3;
+		min-height: 350px;
+		height: calc(60vh - #{$header-height});
+
+		@include tablet() {
+			width: 33%;
+			min-height: 450px;
+		}
+
+		
+	.shop-now-btn-home {
+		text-decoration: none;
+		padding: 10px;
+		background: white;
+		border: 1.5px solid black;
+		font-size: 15px;
+		text-align: center;
+		color: black;
+		display: block;
+		width: 30%;
+		position: absolute;
+		top: 75%;
+		left: 36%;
+
+		@include tablet {
+			position: absolute;
+			left: 29%;
+			top: 85%;
+			width: 40%;
+		}
 	}
-}
 
+		.shop-now-btn-home:hover {
+			background: #edb1c4;
+		}
 
-.blueberry-page {
-	display: none;
+		.pb-bar-img, .blueberry-bar-img {
+			position: absolute;
+			top: 0%;
+			left: 38%;
+			width: 25%;
+			@include tablet {
+				left: 30%;
+				top: 20%;
+				width: 40%;
+			}
+		}
+	}
 }
 
 .squares-page {
@@ -320,9 +329,11 @@ header {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between; 
-	display: none;
+	display: none; 
 	position: relative;
 	transition: .3s;
+	height: calc(60vh - #{$header-height});
+
 
 	.square {
 		width: 20%;
@@ -330,7 +341,7 @@ header {
 		background: #fff;	
 
 		@include tablet() {
-			height: 165px;
+			height: 163px;
 		}
 	} 
 
@@ -396,7 +407,7 @@ header {
 .closed-nav {
 	width: 0%;
 	height: 0%;
-	background: $dark-pink;
+	background: #df2b7e;
 	position: fixed;
 	top: 0%;
 	z-index: 2;
@@ -415,7 +426,6 @@ header {
 			margin: 0px 0;
 			transition: 0.4s; 
 			z-index: 2;
-			// margin: 10px;
 			transform: rotate(45deg);
 		}
 

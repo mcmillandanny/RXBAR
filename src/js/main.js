@@ -8,7 +8,7 @@ let shopNowBtn = document.querySelector('.shop-now-btn-home');
 let squaresPage = document.querySelector('.squares-page');
 let squares = document.querySelectorAll(".square");
 let squareTextBoxes = document.querySelectorAll(".square-text");
-let blueBerryPage = document.querySelector('.blueberry-page');
+
 
 hamburger.addEventListener("click", ()=> {
 
@@ -113,4 +113,114 @@ squares.forEach(function(square) {
 
 // change page tweens
 
+let bodyPage = document.querySelector('body');
+let pinkMenubg = document.querySelector(".pink-menu-bg");
+let blueMenubg = document.querySelector(".blue-menu-bg");
+let eggsHome = document.querySelector(".eggs-home");
+let eggsHomeBlue = document.querySelector(".eggs-home-blue");
+let datesHome = document.querySelector(".dates-home");
+let datesHomeBlue = document.querySelector(".dates-home-blue");
+let peanutHome = document.querySelector(".peanut-home");
+let cashewHome = document.querySelector(".cashews-home");
+let cashewsText = document.querySelector(".cashews-text");
+let peanutText = document.querySelector(".peanuts-text");
+let pbBar = document.querySelector('.pb-bar-img');
+let blueBerryBar = document.querySelector('.blueberry-bar-img');
 
+
+
+let changePage = new TimelineMax({delay: 3});
+
+
+changePage.fromTo(pinkMenubg, .5, {
+    x: 0,
+},
+{
+    x: 100,
+    opacity: 0
+}, "menudotswap")
+
+changePage.to(bodyPage, .3, {
+    backgroundColor: "#b9c4d2"
+}, "menudotswap")
+
+changePage.fromTo(blueMenubg, .3, {
+    x: -120,
+    y: -50,
+    ease: Power3.easeIn,
+},
+{
+    x: 0,
+    y: 0
+}, "menudotswap")
+
+changePage.to(bodyPage, 1, {
+    backgroundColor: "#b9c4d2"
+}, "menudotswap")
+
+changePage.to(eggsHome, .5, {
+    x: -50,
+    opacity: 0
+}, "ingredient")
+
+changePage.from(eggsHomeBlue, .5, {
+    x: 50,
+    opacity: 0
+}, "ingredient")
+
+changePage.to(datesHome, .5, {
+    y: -50,
+    opacity: 0
+}, "ingredient+=0.2")
+
+changePage.from(datesHomeBlue, .5 , {
+    y: 50,
+    opacity: 0
+}, "ingredient+=0.2")
+
+
+
+changePage.to(peanutHome, .5, {
+    x: -50,
+    opacity: 0
+}, "ingredient+=0.2")
+
+changePage.from(cashewHome, .5 , {
+    x: 50,
+    opacity: 0
+}, "ingredient+=0.2")
+
+changePage.to(peanutText, .5, {
+    y: -50,
+    opacity: 0
+}, "ingredient+=0.2")
+
+changePage.fromTo(cashewsText, .5 , {
+    y: 0,
+    opacity: 0,
+    rotation: 0,
+},
+    {
+        y: -20,
+        opacity: 1,
+        rotation: 15,
+    },
+"ingredient+=0.2")
+
+changePage.to(pbBar, .5, {
+    y: -50,
+    opacity: 0
+}, "bar")
+
+changePage.from(blueBerryBar, .5 , {
+    y: 50,
+    opacity: 0
+}, "bar")
+
+
+
+console.log(squares)
+
+squares.forEach(function(square, i) {
+
+})
