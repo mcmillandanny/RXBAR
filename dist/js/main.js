@@ -10,6 +10,21 @@ var shopNowBtn = document.querySelector('.shop-now-btn-home');
 var squaresPage = document.querySelector('.squares-page');
 var squares = document.querySelectorAll(".square");
 var squareTextBoxes = document.querySelectorAll(".square-text");
+var headerLogo = document.querySelector(".header-logo");
+
+headerLogo.addEventListener('click', function () {
+
+    TweenMax.to(squaresPage, .4, {
+        display: "none"
+    });
+
+    TweenMax.to(".content", .3, {
+        display: "flex",
+        ease: Power1.easeIn,
+        opacity: 1
+
+    });
+});
 
 hamburger.addEventListener("click", function () {
 
