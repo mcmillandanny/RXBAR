@@ -129,7 +129,8 @@ let blueBerryBar = document.querySelector('.blueberry-bar-img');
 
 
 
-let changePage = new TimelineMax({delay: 3});
+let changePage = new TimelineMax({delay: 5, yoyo:true, repeat: -1 });
+
 
 
 changePage.fromTo(pinkMenubg, .5, {
@@ -219,8 +220,3 @@ changePage.from(blueBerryBar, .5 , {
 
 
 
-console.log(squares)
-
-squares.forEach(function(square, i) {
-
-})

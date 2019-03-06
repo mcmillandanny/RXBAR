@@ -118,7 +118,7 @@ var peanutText = document.querySelector(".peanuts-text");
 var pbBar = document.querySelector('.pb-bar-img');
 var blueBerryBar = document.querySelector('.blueberry-bar-img');
 
-var changePage = new TimelineMax({ delay: 3 });
+var changePage = new TimelineMax({ delay: 5, yoyo: true, repeat: -1 });
 
 changePage.fromTo(pinkMenubg, .5, {
     x: 0
@@ -198,8 +198,4 @@ changePage.from(blueBerryBar, .5, {
     y: 50,
     opacity: 0
 }, "bar");
-
-console.log(squares);
-
-squares.forEach(function (square, i) {});
 //# sourceMappingURL=main.js.map
