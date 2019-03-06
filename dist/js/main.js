@@ -76,20 +76,6 @@ closeBtn.addEventListener("click", function () {
     });
 });
 
-shopNowBtn.addEventListener("click", function () {
-    console.log("clicked");
-
-    TweenMax.to(squaresPage, .4, {
-        display: "flex",
-        ease: Power1.easeIn
-    });
-
-    TweenMax.to(".content", .3, {
-        display: "none",
-        opacity: 0
-    });
-});
-
 var checkIndex = function checkIndex(event) {
 
     var indexNo = Array.from(squares).indexOf(event.target);
@@ -133,7 +119,37 @@ var peanutText = document.querySelector(".peanuts-text");
 var pbBar = document.querySelector('.pb-bar-img');
 var blueBerryBar = document.querySelector('.blueberry-bar-img');
 
-var changePage = new TimelineMax({ delay: 5, yoyo: true, repeat: -1 });
+pbBar.addEventListener("click", function () {
+    console.log("clicked");
+
+    TweenMax.to(squaresPage, .4, {
+        display: "flex",
+        ease: Power1.easeIn
+    });
+
+    TweenMax.to(".content", .3, {
+        display: "none",
+        opacity: 0
+    });
+});
+
+blueBerryBar.addEventListener("click", function () {
+    console.log("clicked");
+
+    TweenMax.to(squaresPage, .4, {
+        display: "flex",
+        ease: Power1.easeIn
+    });
+
+    TweenMax.to(".content", .3, {
+        display: "none",
+        opacity: 0
+    });
+});
+
+var changePage = new TimelineMax({ delay: 4, yoyo: true, repeat: -1 });
+
+changePage.to({}, 4, {});
 
 changePage.fromTo(pinkMenubg, .5, {
     x: 0
@@ -213,4 +229,6 @@ changePage.from(blueBerryBar, .5, {
     y: 50,
     opacity: 0
 }, "bar");
+
+changePage.to({}, 4, {});
 //# sourceMappingURL=main.js.map

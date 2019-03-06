@@ -82,9 +82,8 @@ table {
 body {
 	font-family: "greycliff_cfmedium";
 	background: url("../img/BACKGROUND PATTERN.png");
-	background: cover;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	background-color: #edb1c4;
 }
 
@@ -350,8 +349,8 @@ header .header-logo {
 	display: block;
 	width: 30%;
 	position: absolute;
-	top: 105%;
-	left: 36%;
+	top: 100%;
+	left: 37%;
 }
 
 @media (min-width: 768px) {
@@ -370,8 +369,50 @@ header .header-logo {
 .content .col-3 .pb-bar-img, .content .col-3 .blueberry-bar-img {
 	position: absolute;
 	top: 12%;
-	left: 42%;
-	width: 20%;
+	left: 39%;
+	width: 27%;
+	cursor: pointer;
+}
+
+.content .col-3 .pb-bar-img .pb-bar-img:hover, .content .col-3 .blueberry-bar-img .pb-bar-img:hover {
+	animation: shake 0.5s infinite;
+	border: 1px red solid;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
+	}
 }
 
 @media (min-width: 768px) {
@@ -397,6 +438,13 @@ header .header-logo {
 	position: relative;
 	transition: .3s;
 	height: calc(60vh - 120px);
+}
+
+@media (min-width: 1024px) {
+	.squares-page {
+		max-width: 1300px;
+		margin: auto;
+	}
 }
 
 .squares-page .square {

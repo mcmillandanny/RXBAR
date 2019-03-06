@@ -79,21 +79,7 @@ closeBtn.addEventListener("click", () => {
 
 
 
-shopNowBtn.addEventListener("click", () => {
-    console.log("clicked");
 
-    TweenMax.to(squaresPage, .4, {
-        display: "flex",
-        ease: Power1.easeIn,
-    })
-
-    TweenMax.to(".content", .3, {
-        display: "none",
-        opacity: 0
-    })
-
-    
-})
 
 
 let checkIndex = function(event) {
@@ -142,10 +128,42 @@ let peanutText = document.querySelector(".peanuts-text");
 let pbBar = document.querySelector('.pb-bar-img');
 let blueBerryBar = document.querySelector('.blueberry-bar-img');
 
+pbBar.addEventListener("click", () => {
+    console.log("clicked");
+
+    TweenMax.to(squaresPage, .4, {
+        display: "flex",
+        ease: Power1.easeIn,
+    })
+
+    TweenMax.to(".content", .3, {
+        display: "none",
+        opacity: 0
+    })
+
+    
+})
+
+blueBerryBar.addEventListener("click", () => {
+    console.log("clicked");
+
+    TweenMax.to(squaresPage, .4, {
+        display: "flex",
+        ease: Power1.easeIn,
+    })
+
+    TweenMax.to(".content", .3, {
+        display: "none",
+        opacity: 0
+    })
+
+    
+})
 
 
-let changePage = new TimelineMax({delay: 5, yoyo:true, repeat: -1 });
+let changePage = new TimelineMax({ delay: 4, yoyo:true, repeat: -1 });
 
+changePage.to({}, 4, {});
 
 
 changePage.fromTo(pinkMenubg, .5, {
@@ -233,5 +251,6 @@ changePage.from(blueBerryBar, .5 , {
     opacity: 0
 }, "bar")
 
+changePage.to({}, 4, {});
 
 
