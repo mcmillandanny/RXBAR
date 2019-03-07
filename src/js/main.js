@@ -248,7 +248,8 @@ changePage.to(pbBar, .5, {
 
 changePage.from(blueBerryBar, .5 , {
     y: 50,
-    opacity: 0
+    opacity: 0,
+    display: 'none'
 }, "bar")
 
 changePage.to({}, 4, {});

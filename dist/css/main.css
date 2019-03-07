@@ -374,9 +374,22 @@ header .header-logo {
 	cursor: pointer;
 }
 
-.content .col-3 .pb-bar-img .pb-bar-img:hover, .content .col-3 .blueberry-bar-img .pb-bar-img:hover {
-	animation: shake 0.5s infinite;
-	border: 1px red solid;
+@media (min-width: 768px) {
+	.content .col-3 .pb-bar-img, .content .col-3 .blueberry-bar-img {
+		left: 30%;
+		top: 20%;
+		width: 40%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.content .col-3 .pb-bar-img, .content .col-3 .blueberry-bar-img {
+		top: 10%;
+	}
+}
+
+.content .col-3 .pb-bar-img:hover, .content .col-3 .blueberry-bar-img:hover {
+	animation: shake 1.25s infinite;
 }
 
 @keyframes shake {
@@ -412,20 +425,6 @@ header .header-logo {
 	}
 	100% {
 		transform: translate(1px, -2px) rotate(-1deg);
-	}
-}
-
-@media (min-width: 768px) {
-	.content .col-3 .pb-bar-img, .content .col-3 .blueberry-bar-img {
-		left: 30%;
-		top: 20%;
-		width: 40%;
-	}
-}
-
-@media (min-width: 1024px) {
-	.content .col-3 .pb-bar-img, .content .col-3 .blueberry-bar-img {
-		top: 10%;
 	}
 }
 

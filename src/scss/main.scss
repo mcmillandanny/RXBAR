@@ -337,25 +337,6 @@ header {
 			width: 27%;
 			cursor: pointer;
 
-			.pb-bar-img:hover{
-				animation: shake 0.5s infinite;	
-				border: 1px red solid;
-			}
-
-			@keyframes shake {
-				0% { transform: translate(1px, 1px) rotate(0deg); }
-				10% { transform: translate(-1px, -2px) rotate(-1deg); }
-				20% { transform: translate(-3px, 0px) rotate(1deg); }
-				30% { transform: translate(3px, 2px) rotate(0deg); }
-				40% { transform: translate(1px, -1px) rotate(1deg); }
-				50% { transform: translate(-1px, 2px) rotate(-1deg); }
-				60% { transform: translate(-3px, 1px) rotate(0deg); }
-				70% { transform: translate(3px, 1px) rotate(-1deg); }
-				80% { transform: translate(-1px, -1px) rotate(1deg); }
-				90% { transform: translate(1px, 2px) rotate(0deg); }
-				100% { transform: translate(1px, -2px) rotate(-1deg); }
-			  }
-
 			@include tablet {
 				left: 30%;
 				top: 20%;
@@ -366,6 +347,24 @@ header {
 				top: 10%;
 			}
 		}
+
+		.pb-bar-img:hover, .blueberry-bar-img:hover {
+			animation: shake 1.25s infinite;	
+		}
+
+		@keyframes shake {
+			0% { transform: translate(1px, 1px) rotate(0deg); }
+			10% { transform: translate(-1px, -2px) rotate(-1deg); }
+			20% { transform: translate(-3px, 0px) rotate(1deg); }
+			30% { transform: translate(3px, 2px) rotate(0deg); }
+			40% { transform: translate(1px, -1px) rotate(1deg); }
+			50% { transform: translate(-1px, 2px) rotate(-1deg); }
+			60% { transform: translate(-3px, 1px) rotate(0deg); }
+			70% { transform: translate(3px, 1px) rotate(-1deg); }
+			80% { transform: translate(-1px, -1px) rotate(1deg); }
+			90% { transform: translate(1px, 2px) rotate(0deg); }
+			100% { transform: translate(1px, -2px) rotate(-1deg); }
+		  }
 	}
 }
 
@@ -383,6 +382,7 @@ header {
 		max-width: 1300px;
 		margin: auto;
 	}
+
 
 
 	.square {
@@ -448,6 +448,7 @@ header {
 		display: none;
 		pointer-events: none;
 
+		
 		@include tablet() {
 			font-size: 120px;
 		}
